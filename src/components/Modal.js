@@ -16,7 +16,7 @@ const Modal = () => {
             }}>
               confirm
             </button>
-            <button type='button' className='btn clear-btn' Click={()=>{
+            <button type='button' className='btn clear-btn' onClick={()=>{
                 dispatch(closeModal());
             }}>
               cancel
