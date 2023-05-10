@@ -2,7 +2,7 @@ import { CartIcon } from '../icons';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-    const { amount } = useSelector((state) => state.cart);
+    const { amount } = useSelector((store) => store.cart.amount);
   
     return (
       <nav>
