@@ -3,7 +3,7 @@ import cartItems from "../../cartItems";
 
 const initialState = {
     cartItems: cartItems,
-    amount: 0,
+    amount: 4,
     total: 0,
     isLoading: true,
 }
@@ -15,8 +15,13 @@ const cartSlice = createSlice ({
     clearCart: (state) => {
       state.cartItems = [];
     },
+    removeItem: (state, action) => {
+        const itemId = action.payload;
+        state.cartItems = state.cartItems.filter((item)=>item.id !== itemId)
+    }
   },
 });
+// console.log(cartSlice)
 
 export default cartSlice.reducer;
-export const { clearCart } = cartSlice.actions;
+export const { clearCart, removeItem } = cartSlice.actions;
